@@ -1,0 +1,105 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "PythonUDF",
+      "params": {
+        "mode": "ROW",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
+        "stopOnError": true,
+        "pythonSourceCode": "from collections import Counter \n   \ndef most_frequent(List): \n    occurence_count \u003d Counter(List) \n    return occurence_count.most_common(1)[0][0] \n\ndef process(row):\n    row[\u0027label\u0027] \u003d row[\u0027label_first\u0027]\n    \n    row[\u0027most_freq_label\u0027] \u003d most_frequent(row[\u0027max_label_concat\u0027].split(\u0027,\u0027))\n    row[\u0027most_freq_correct\u0027] \u003d 1 if row[\u0027label\u0027] \u003d\u003d row[\u0027most_freq_label\u0027] else 0\n    \n    return row",
+        "useKernel": false,
+        "sourceColumnsList": [],
+        "usePythonUnicode": true,
+        "vectorSize": 256,
+        "vectorize": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "max_label_concat",
+          "label_first"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "prediction_sad_avg": 176,
+    "correct_avg": 155,
+    "label_first": 100,
+    "max_label_concat": 300,
+    "prediction_calm_avg": 183,
+    "video_path": 190,
+    "prediction_fearful_avg": 204,
+    "max_avg_label": 113,
+    "prediction_neutral_avg": 204,
+    "prediction_surprised_avg": 218,
+    "label": 100,
+    "static_value": 105,
+    "most_freq_correct": 143,
+    "max_avg_prediction": 176,
+    "rowLength": 100,
+    "most_freq_label": 128,
+    "max_avg_correct": 128,
+    "prediction_happy_avg": 190,
+    "prediction_angry_avg": 190,
+    "prediction_disgust_avg": 204
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

@@ -1,16 +1,63 @@
 {
   "dashboardAuthorizations": {
     "allAuthorized": false,
+<<<<<<< HEAD
     "authorizations": []
+=======
+    "authorizations": [
+      {
+        "objectRef": {
+          "objectId": "Test Scoring API",
+          "objectType": "JUPYTER_NOTEBOOK"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "ProdScoredVideos",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "READ"
+        ]
+      },
+      {
+        "objectRef": {
+          "objectId": "ProdScoredImages_prepared",
+          "objectType": "DATASET"
+        },
+        "modes": [
+          "READ"
+        ]
+      }
+    ]
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
   },
   "exposedObjects": {
     "objects": []
   },
   "projectType": "REGULAR",
+<<<<<<< HEAD
   "projectAppType": "REGULAR",
   "hasSetupSection": false,
   "owner": "admin",
   "permissionsVersion": "V2",
+=======
+  "projectAppType": "APP_TEMPLATE",
+  "bundleContainerSettings": {
+    "remapping": {
+      "connections": [],
+      "codeEnvs": []
+    },
+    "codeEnvsBehavior": {
+      "envImportSpecificationMode": "SPECIFIED",
+      "importTimeMode": "INSTALL_IF_MISS"
+    }
+  },
+  "owner": "admin",
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
   "permissions": [],
   "additionalDashboardUsers": {
     "users": []
@@ -18,12 +65,16 @@
   "tutorialProject": false,
   "settings": {
     "flowAnchorSourcesAndSinks": true,
+<<<<<<< HEAD
     "flowDisplaySettings": {
       "zonesGraphRenderingAlgorithm": "DOT_OLDRANK",
       "zonesGraphConnectZones": true,
       "zonesGraphForJobs": true
     },
     "gitCommitMode": "ALL_EXPLICIT",
+=======
+    "gitCommitMode": "AUTO",
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
     "useRemoteGit": true,
     "disableAutomaticTriggers": false,
     "integrations": {
@@ -33,12 +84,17 @@
       "mergeSparkPipelines": false,
       "pruneBeforeSparkPipelines": true,
       "mergeSqlPipelines": false,
+<<<<<<< HEAD
       "pruneBeforeSqlPipelines": true,
       "defaultRecipeHashPropagationBehavior": "ENABLED"
     },
     "sharingRequestsEnabled": "INHERIT",
     "limitedVisibilityEnabled": "INHERIT",
     "accessRequestsEnabled": "INHERIT",
+=======
+      "pruneBeforeSqlPipelines": true
+    },
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
     "limitsSettings": {
       "memSampleBytes": {
         "soft": -1,
@@ -77,10 +133,14 @@
       }
     },
     "container": {
+<<<<<<< HEAD
       "containerMode": "INHERIT"
     },
     "containerForVisualRecipesWorkloads": {
       "containerMode": "INHERIT"
+=======
+      "containerMode": "NONE"
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
     },
     "datasetsCreationSettings": {
       "useGlobal": true,
@@ -124,7 +184,10 @@
         },
         "scaling": {
           "initialReplicas": 1,
+<<<<<<< HEAD
           "progressDeadlineSeconds": 600,
+=======
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
           "hpa": false,
           "hpaTargetCPUPercent": 0,
           "hpaMetrics": [],
@@ -132,6 +195,7 @@
           "hpaMaxPods": 0,
           "hpaAnnotations": []
         },
+<<<<<<< HEAD
         "deploymentModifier": {
           "config": {}
         }
@@ -141,6 +205,15 @@
   },
   "name": "deepemotion",
   "projectStatus": "Sandbox",
+=======
+        "deploymentModifier": {}
+      }
+    }
+  },
+  "name": "phData - Emotion Detection with Deep Learning",
+  "projectStatus": "Sandbox",
+  "imgPattern": 2,
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
   "metrics": {
     "probes": [],
     "engineConfig": {
@@ -167,7 +240,10 @@
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
+<<<<<<< HEAD
           "ascending": true,
+=======
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
           "withinFirstN": -1,
           "maxReadUncompressedBytes": -1
         }
@@ -196,11 +272,22 @@
       "checks": []
     }
   },
+<<<<<<< HEAD
+=======
+  "versionTag": {
+    "versionNumber": 11,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1597935428723
+  },
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
       "login": "admin"
     },
+<<<<<<< HEAD
     "lastModifiedOn": 1732692807814
   },
   "shortDesc": "The project *deepemotion* was created by Richard Wong on Nov 27th 2024",
@@ -243,5 +330,14 @@
         ]
       }
     ]
+=======
+    "lastModifiedOn": 1593619748700
+  },
+  "shortDesc": "The project *phData - Emotion Detection with Deep Learning* was created by Robert Coop on Jul 01st 2020",
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
   }
 }

@@ -1,0 +1,81 @@
+{
+  "pages": [
+    {
+      "id": "M4lUTLB",
+      "grid": {
+        "tiles": [
+          {
+            "tileType": "INSIGHT",
+            "box": {
+              "top": 0,
+              "left": 0,
+              "width": 11,
+              "height": 3
+            },
+            "clickAction": "DO_NOTHING",
+            "tileParams": {
+              "showXAxis": false,
+              "showYAxis": true,
+              "showLegend": true,
+              "showTooltips": true,
+              "autoPlayAnimation": true
+            },
+            "autoLoad": true,
+            "showTitle": "YES",
+            "insightId": "OFgXMBU",
+            "insightType": "chart",
+            "displayMode": "INSIGHT",
+            "resizeImageMode": "FIT_SIZE"
+          },
+          {
+            "tileType": "INSIGHT",
+            "box": {
+              "top": 3,
+              "left": 0,
+              "width": 11,
+              "height": 6
+            },
+            "clickAction": "DO_NOTHING",
+            "tileParams": {
+              "showXAxis": true,
+              "showYAxis": false,
+              "showLegend": true,
+              "showTooltips": true,
+              "autoPlayAnimation": true
+            },
+            "autoLoad": true,
+            "showTitle": "YES",
+            "insightId": "zZ8NB8U",
+            "insightType": "chart",
+            "displayMode": "INSIGHT",
+            "resizeImageMode": "FIT_SIZE"
+          }
+        ]
+      },
+      "showTitle": false
+    }
+  ],
+  "owner": "admin",
+  "listed": false,
+  "name": "App Dash",
+  "showGrid": true,
+  "versionTag": {
+    "versionNumber": 13,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1597936742231
+  },
+  "creationTag": {
+    "versionNumber": 0,
+    "lastModifiedBy": {
+      "login": "admin"
+    },
+    "lastModifiedOn": 1597869080648
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}

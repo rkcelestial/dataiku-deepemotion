@@ -1,0 +1,118 @@
+{
+  "columnsSelection": {
+    "mode": "ALL"
+  },
+  "explorationSampling": {
+    "_refreshTrigger": 0,
+    "selection": {
+      "filter": {
+        "distinct": false,
+        "enabled": false
+      },
+      "latestPartitionsN": 1,
+      "maxRecords": 10000,
+      "ordering": {
+        "rules": [],
+        "enabled": false
+      },
+      "withinFirstN": -1,
+      "partitionSelectionMethod": "ALL",
+      "maxStoredBytes": 104857600,
+      "targetRatio": 0.02,
+      "maxReadUncompressedBytes": -1,
+      "samplingMethod": "HEAD_SEQUENTIAL"
+    },
+    "autoRefreshSample": false
+  },
+  "explorationFilters": [],
+  "origin": "PREPARE_RECIPE",
+  "exploreUIParams": {
+    "autoRefresh": true
+  },
+  "steps": [
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "JSONFlattener",
+      "params": {
+        "maxDepth": 10,
+        "inCol": "prediction",
+        "nullAsEmpty": true,
+        "prefixOutputs": true,
+        "flattenArrays": false,
+        "separator": "_"
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": false,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "PythonUDF",
+      "params": {
+        "mode": "ROW",
+        "envSelection": {
+          "envMode": "INHERIT"
+        },
+        "stopOnError": true,
+        "pythonSourceCode": "# Modify the process function to fit your needs\ndef process(row):\n    max_val \u003d 0\n    max_label \u003d None\n    \n    emotions \u003d [\u0027calm\u0027, \u0027sad\u0027, \u0027surprised\u0027, \u0027neutral\u0027, \n                \u0027fearful\u0027, \u0027angry\u0027, \u0027happy\u0027, \u0027disgust\u0027]\n    \n    for e in emotions:\n        p \u003d float(row[\u0027prediction_{}\u0027.format(e)])\n        if p \u003e max_val:\n            max_val \u003d p\n            max_label \u003d e\n    \n    row[\u0027max_prediction\u0027] \u003d max_val\n    row[\u0027max_label\u0027] \u003d max_label\n    \n    row[\u0027label\u0027] \u003d row[\u0027images\u0027].split(\u0027_\u0027)[1]\n    \n    row[\u0027correct\u0027] \u003d 1 if row[\u0027label\u0027] \u003d\u003d row[\u0027max_label\u0027] else 0\n    \n    row[\u0027video_path\u0027] \u003d \u0027/{}.mp4\u0027.format(row[\u0027images\u0027].split(\u0027_\u0027)[0])\n    \n    return row",
+        "useKernel": false,
+        "sourceColumnsList": [],
+        "usePythonUnicode": true,
+        "vectorSize": 256,
+        "vectorize": false
+      },
+      "alwaysShowComment": false
+    },
+    {
+      "preview": true,
+      "metaType": "PROCESSOR",
+      "disabled": false,
+      "type": "ColumnsSelector",
+      "params": {
+        "columns": [
+          "error",
+          "prediction"
+        ],
+        "keep": false,
+        "appliesTo": "COLUMNS"
+      },
+      "alwaysShowComment": false
+    }
+  ],
+  "maxProcessedMemTableBytes": -1,
+  "previewMode": "ALL_ROWS",
+  "vizSampling": {
+    "_refreshTrigger": 0,
+    "autoRefreshSample": false
+  },
+  "analysisColumnData": {},
+  "columnWidthsByName": {
+    "images": 288,
+    "prediction_angry": 162,
+    "correct": 100,
+    "max_prediction": 148,
+    "max_label": 100,
+    "video_path": 190,
+    "prediction_fearful": 176,
+    "label": 100,
+    "error": 100,
+    "prediction_neutral": 176,
+    "static_value": 105,
+    "prediction_calm": 162,
+    "prediction_disgust": 176,
+    "rowLength": 100,
+    "prediction": 300,
+    "prediction_sad": 162,
+    "prediction_surprised": 190,
+    "prediction_happy": 162
+  },
+  "sorting": [],
+  "globalSearchQuery": "",
+  "coloring": {
+    "scheme": "MEANING_AND_STATUS",
+    "individualColumns": [],
+    "valueColoringMode": "HASH"
+  }
+}

@@ -2,12 +2,20 @@
 .mainlock
 .wlock
 .ts
+<<<<<<< HEAD
 git-info.json
 .git
 merge-requests.json
 version-tags.json
+=======
+.git
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a
 *.pyc
 .coverage
 .htmlcov
 .DS_Store
+<<<<<<< HEAD
 .idea
+=======
+.idea
+>>>>>>> 8bbdd040c9febb11b071385822398717585d806a

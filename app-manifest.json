@@ -1,0 +1,56 @@
+{
+  "projectExportManifest": {
+    "exportUploads": false,
+    "exportAllInputDatasets": false,
+    "exportAllDatasets": false,
+    "exportManagedFS": false,
+    "exportAnalysisModels": false,
+    "exportSavedModels": false,
+    "exportManagedFolders": false,
+    "exportAllInputManagedFolders": false,
+    "exportInsightsData": false,
+    "includedDatasetsData": [],
+    "includedSavedModels": [],
+    "includedManagedFolders": [
+      {
+        "id": "vZax0pwm",
+        "name": "Trained Resnet"
+      }
+    ],
+    "exportGitRepository": false
+  },
+  "instanceFeatures": {
+    "showFlowNavLink": false,
+    "showLabNavLink": false,
+    "showCodeNavLink": false,
+    "showVersionControlFeatures": false
+  },
+  "useAppHomepage": true,
+  "homepageSections": [
+    {
+      "sectionTitle": "Interface",
+      "tiles": [
+        {
+          "folderId": "MzP4vBYB",
+          "behavior": "GO_TO_FOLDER",
+          "type": "MANAGED_FOLDER_ADD_FILE",
+          "prompt": "Upload video to score (MP4)"
+        },
+        {
+          "scenarioId": "PRODSCOREVIDEOS",
+          "type": "SCENARIO_RUN",
+          "prompt": "Go"
+        },
+        {
+          "dashboardId": "DLQrB2c",
+          "type": "DASHBOARD_LINK",
+          "prompt": "View results"
+        }
+      ]
+    }
+  ],
+  "label": "phData - Emotion Detection with Deep Learning",
+  "shortDesc": "The template *phData - Emotion Detection with Deep Learning* was created by Robert Coop on Aug 19th 2020",
+  "tags": [],
+  "instantiationPermission": "USE_APP_MASTER_PERMISSIONS"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "phdata_score_video",
+  "endpoints": [
+    {
+      "modelType": "CLASSIFICATION",
+      "envSelection": {
+        "envMode": "INHERIT"
+      },
+      "testQueries": [],
+      "enrichMapping": [],
+      "healthCheckQueries": [],
+      "returnPostEnrichData": false,
+      "auditPostEnrichData": false,
+      "id": "prod_score_video",
+      "type": "CUSTOM_PREDICTION"
+    }
+  ],
+  "publicAccess": true,
+  "authRealm": {
+    "queryKeys": []
+  },
+  "tags": [],
+  "customFields": {},
+  "checklists": {
+    "checklists": []
+  }
+}
