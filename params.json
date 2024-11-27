@@ -24,6 +24,7 @@
       "zonesGraphForJobs": true
     },
     "gitCommitMode": "ALL_EXPLICIT",
+    "useRemoteGit": true,
     "disableAutomaticTriggers": false,
     "integrations": {
       "integrations": []
